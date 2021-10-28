@@ -3,7 +3,7 @@
 Pour le lancement du programme il suffit juste de cliquer sur l’executer de l’IDE et le point d'entrée est la fonction ```main()``` dans le code.
 la fonction main instancié un objet de la classe ApplicationAuthentification pour appeler ses fonctions
 elle crée la fenetre principal auquels elle rajoute
-- 1 logo qui est une image en appellant la fonction charger_logo(ecran)
+- 1 logo qui est une image en appellant la fonction ```charger_logo(ecran)```
 - 2 labels (identifiant, mot de passe)
 - 3 boutons (Reset, Ajout compte, OK) qui sont decrits en detail ci-dessous.
 
