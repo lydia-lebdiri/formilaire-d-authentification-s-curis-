@@ -7,9 +7,6 @@ elle crée la fenetre principal auquels elle rajoute
 - 2 labels (identifiant, mot de passe)
 - 3 boutons (Reset, Ajout compte, OK) qui sont decrits en detail ci-dessous.
 
-![plot](..\main\capture\logo.png)
-
-
 ![plot](..\main\capture\capture.png)
 
 J'ai également utilisé les modules suivants:
