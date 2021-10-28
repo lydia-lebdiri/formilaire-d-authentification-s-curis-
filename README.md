@@ -46,7 +46,7 @@ Et en clique sur le bouton OK pour fermer l'ecran du message afficher avec la fo
 Bouton OK: permet de verifier si un utilisateur peut se connecter et appelle la fonction ```verfier_login()```,
 - si l'identifiant ou le modt de passe sont vides la fonction ```enregistrer_utilisateur_champs_vide()``` est appelée et qui affiche un popup.
 
-![plot](../main/capture/champ_vide_OK.png) 
+![plot](../main/capture/champ_vide_OK .png) 
  
 - si l'identifiant est correct et le mot de passe aussi alors la fonction ```authentification_réussi()``` va s’exécuter est un popup vas afficher un message d'authentification réussi et pour la fermer on clique sur le bouton ok qui appelle la fonction ```supprimer_login_reussi()```
 
