@@ -1,3 +1,4 @@
+import base64
 from tkinter import *
 import os
 from PIL import Image, ImageTk
@@ -43,14 +44,16 @@ class ApplicationAuthentification():
             # ici pareil on cree le folder utilisateurs s'il n'exsite pas
             Path("utilisateurs").mkdir(parents=True, exist_ok=True)
             list_fichiers = os.listdir("utilisateurs/")
+            identifiant_info = base64.b64encode(identifiant_info.encode("utf-8"))
             if identifiant_info in list_fichiers:
                 # afficheer une fenetre qui dit que l'uitlisateur existe deja
                 self.utilisateur_existe_deja()
             else:
                 # on ecrit les fichiers de logins dans le folder utilisateurs
-                fichier = open("utilisateurs/" + identifiant_info, "w")
-                fichier.write(identifiant_info + "\n")
-                fichier.write(mot_de_passe_info)
+                fichier = open("utilisateurs/" + identifiant_info.decode(), "w")
+                mot_de_passe_info = base64.b64encode(mot_de_passe_info.encode("utf-8"))
+                fichier.write(identifiant_info.decode() + "\n")
+                fichier.write(mot_de_passe_info.decode())
                 fichier.close()
 
                 identifiant_input.delete(0, END)
@@ -72,10 +75,12 @@ class ApplicationAuthentification():
             # ici pareil on cree le folder utilisateurs s'il n'exsite pas
             Path("utilisateurs").mkdir(parents=True, exist_ok=True)
             list_fichiers = os.listdir("utilisateurs/")
-            if identifiant_1 in list_fichiers:
-                fichier = open("utilisateurs/" + identifiant_1, "r")
+            identifiant_1 = base64.b64encode(identifiant_1.encode("utf-8"))
+            mot_de_passe_1 = base64.b64encode(mot_de_passe_1.encode("utf-8"))
+            if identifiant_1.decode() in list_fichiers:
+                fichier = open("utilisateurs/" + identifiant_1.decode(), "r")
                 verify = fichier.read().splitlines()
-                if mot_de_passe_1 in verify:
+                if mot_de_passe_1.decode() in verify:
                     self.authentification_reussie()
 
                 else:
